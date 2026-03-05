@@ -1,0 +1,23 @@
+.wrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.track {
+  display: flex;
+  width: fit-content;
+  animation: marquee 25s linear infinite;
+}
+
+.content {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+  padding-right: 12px;
+}

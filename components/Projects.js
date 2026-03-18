@@ -9,7 +9,7 @@ const PROJECTS = [
     title: "Lucy's Kitchen & Market",
     category: 'Shopify E-Commerce',
     description:
-      'Full-stack Shopify build for a specialty food business — custom cart validation, collection closure scheduling, dynamic pickup dates, and ACH payment processing.',
+      'Full-stack Shopify build for a specialty food business — custom cart validation, collection closure scheduling, dynamic pickup and delivery system, and integrated flexible content areas.',
     tags: ['Shopify', 'Liquid', 'JavaScript', 'E-Commerce'],
     color: '#E8A44A',
     image: '/preview-lucys.jpg',
@@ -19,21 +19,21 @@ const PROJECTS = [
     title: 'Meep Meet',
     category: 'React / Next.js App',
     description:
-      'Board game night planner with BoardGameGeek API integration, user auth via Clerk, PostgreSQL with Prisma ORM, and Discord webhook notifications.',
+      'Board game night planner with BoardGameGeek API integration for, user auth via Clerk, PostgreSQL with Prisma ORM, and custom statistics and gameplay tracking logic.',
     tags: ['Next.js', 'React', 'PostgreSQL', 'Prisma'],
     color: '#6C9BF2',
     image: '/preview-meepmeet.jpg',
     url: 'https://meepmeet.club',
   },
   {
-    title: 'GenInterlock',
-    category: 'WooCommerce Development',
+    title: 'Prepara',
+    category: 'Shopify Theme Development',
     description:
-      'WooCommerce build for an generator part manufacturer — complex product groupings, component relationships, and compatibility logic. Focus on stability and reliable purchasing flows.',
-    tags: ['WordPress', 'JavaScript', 'PHP', 'E-Commerce'],
+      'Shopify theme overhaul — rebuilt product and collection pages, integrated flexible content areas for ongoing client updates, and restructured navigation with a custom menu system.',
+    tags: ['Shopify', 'Liquid', 'JavaScript', 'E-Commerce'],
     color: '#50C4A1',
-    image: '/preview-geninterlock.jpg',
-    url: 'https://geninterlock.com',
+    image: '/preview-prepara.jpg',
+    url: 'https://prepara.com',
   },
   {
     title: 'On Demand Air',
@@ -55,17 +55,26 @@ const PROJECTS = [
     image: '/preview-imperial.jpg',
     url: 'https://imperial.design/',
   },
+  // {
+  //   title: 'The Steves Database',
+  //   category: 'Django Application',
+  //   description:
+  //     'A catalog of actors named Steve and their roles across media. Built with Django, featuring comprehensive data import from Excel and a searchable interface.',
+  //   tags: ['Django', 'Python', 'PostgreSQL', 'Data'],
+  //   color: '#E06B75',
+  //   image: '/preview-steves.jpg',
+  //   url: null,
+  // },
   {
-    title: 'The Steves Database',
-    category: 'Django Application',
+    title: 'GenInterlock',
+    category: 'WooCommerce Development',
     description:
-      'A catalog of actors named Steve and their roles across media. Built with Django, featuring comprehensive data import from Excel and a searchable interface.',
-    tags: ['Django', 'Python', 'PostgreSQL', 'Data'],
+      'WooCommerce build handling complex product groupings, component relationships, and compatibility logic. Focus on stability and reliable purchasing flows.',
+    tags: ['WordPress', 'JavaScript', 'PHP', 'E-Commerce'],
     color: '#E06B75',
-    image: '/preview-steves.jpg',
-    url: null,
+    image: '/preview-geninterlock.jpg',
+    url: 'https://geninterlock.com',
   },
-  
 ];
 
 export default function Projects({ hoveredLang }) {
@@ -91,7 +100,7 @@ export default function Projects({ hoveredLang }) {
         {PROJECTS.map((p, i) => (
           <FadeIn key={i} delay={i * 0.1}>
             <div
-              className={`${styles.cardWrapper} ${hovered === i ? styles.cardHover : ''}`}
+              className={`${styles.card} ${hovered === i ? styles.cardHover : ''}`}
               style={{
                 '--project-color': p.color,
                 '--project-color-faded': p.color + '44',
@@ -99,30 +108,12 @@ export default function Projects({ hoveredLang }) {
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
-              <div className={styles.card}>
+              <div className={styles.imageArea}>
                 <div className={styles.stripe} />
-
-                {p.image && p.url && (
-                  <div className={styles.imageSlide}>
-                    <img src={p.image} alt={p.title} className={styles.slideImg} />
-                  </div>
+                {p.image && (
+                  <img src={p.image} alt={p.title} className={styles.slideImg} />
                 )}
                 <div className={styles.dimOverlay} />
-
-                <span className={styles.category}>{p.category}</span>
-                <h3 className={styles.name}>{p.title}</h3>
-                <p className={styles.desc}>{p.description}</p>
-                <div className={styles.tags}>
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className={`${styles.tag} ${tagMatches(t) ? styles.tagHighlighted : ''}`}
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
                 {p.url ? (
                   <a
                     href={p.url}
@@ -138,6 +129,22 @@ export default function Projects({ hoveredLang }) {
                     In Development
                   </span>
                 )}
+              </div>
+
+              <div className={styles.content}>
+                <span className={styles.category}>{p.category}</span>
+                <h3 className={styles.name}>{p.title}</h3>
+                <p className={styles.desc}>{p.description}</p>
+                <div className={styles.tags}>
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className={`${styles.tag} ${tagMatches(t) ? styles.tagHighlighted : ''}`}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </FadeIn>

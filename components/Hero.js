@@ -37,7 +37,7 @@ export default function Hero() {
       <FadeIn delay={0.2}>
         <p className={styles.subtitle}>
           Steve Sikoryak — Shopify Developer &amp; Full-Stack Builder 
-          with 10+ years of experience crafting high-performing storefronts 
+          with 9+ years of experience crafting high-performing storefronts 
           and web applications. Detail-oriented, collaborative, and known for 
           shipping clean, thoughtful solutions.
         </p>
@@ -56,7 +56,7 @@ export default function Hero() {
 
       <FadeIn delay={0.4}>
         <div className={styles.counters}>
-          <Counter end={10} suffix="+" label="YEARS EXPERIENCE" />
+          <Counter end={9} suffix="+" label="YEARS EXPERIENCE" />
           <div className={styles.counterDivider} />
           <Counter end={30} suffix="+" label="HAPPY CLIENTS" />
           <div className={styles.counterDivider} />

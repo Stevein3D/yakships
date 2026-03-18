@@ -11,8 +11,9 @@ const TOOLS = [
   { name: 'PHP', desc: 'Server-Side Language', icon: '🔷' },
   { name: 'React', desc: 'UI Framework', icon: '⚛️' },
   { name: 'Next.js', desc: 'Full-Stack React', icon: '▲' },
-  { name: 'Django', desc: 'Python Framework', icon: '🐍' },
   { name: 'PostgreSQL', desc: 'Database', icon: '🐘' },
+  // { name: 'Django', desc: 'Python Framework', icon: '🐍' },
+  { name: 'Git', desc: 'Version Control', icon: '⎇' },
   { name: 'JavaScript', desc: 'Core Language', icon: '✦' },
   { name: 'CSS / Tailwind', desc: 'Styling', icon: '🎨' },
 

@@ -4,7 +4,8 @@ import { useState } from 'react';
 import styles from './Marquee.module.css';
 
 const LANGS = [
-  'Shopify', 'React', 'Next.js', 'Django',
+  'Shopify', 'React', 'Next.js', 
+  // 'Django',
   'Liquid', 'PostgreSQL', 'JavaScript', 'E-Commerce',
   'WordPress', 'HubSpot',
 ];

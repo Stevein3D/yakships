@@ -63,7 +63,7 @@ export function Counter({ end, suffix = '', label }) {
   return (
     <div ref={ref} className="counter-box">
       <span className="counter-number">
-        +{count}{suffix}
+        {count}{suffix}
       </span>
       <span className="counter-label">{label}</span>
     </div>

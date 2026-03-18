@@ -11,7 +11,7 @@ export function ContactCTA() {
             Have a Shopify project, a web app idea, or need e-commerce expertise?
             I&apos;d love to hear about it. Let&apos;s build something great together.
           </p>
-          <a href="mailto:hello@yakships.dev" className={styles.btnPrimary}>
+          <a href="mailto:stevein3d@gmail.com" className={styles.btnPrimary}>
             Get in Touch →
           </a>
         </div>

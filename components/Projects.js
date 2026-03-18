@@ -12,6 +12,8 @@ const PROJECTS = [
       'Full-stack Shopify build for a specialty food business — custom cart validation, collection closure scheduling, dynamic pickup dates, and ACH payment processing.',
     tags: ['Shopify', 'Liquid', 'JavaScript', 'E-Commerce'],
     color: '#E8A44A',
+    image: '/preview-lucys.jpg',
+    url: 'https://lucystogo.com',
   },
   {
     title: 'Meep Meet',
@@ -20,6 +22,38 @@ const PROJECTS = [
       'Board game night planner with BoardGameGeek API integration, user auth via Clerk, PostgreSQL with Prisma ORM, and Discord webhook notifications.',
     tags: ['Next.js', 'React', 'PostgreSQL', 'Prisma'],
     color: '#6C9BF2',
+    image: '/preview-meepmeet.jpg',
+    url: 'https://meepmeet.club',
+  },
+  {
+    title: 'GenInterlock',
+    category: 'WooCommerce Development',
+    description:
+      'WooCommerce build for an generator part manufacturer — complex product groupings, component relationships, and compatibility logic. Focus on stability and reliable purchasing flows.',
+    tags: ['WordPress', 'JavaScript', 'PHP', 'E-Commerce'],
+    color: '#50C4A1',
+    image: '/preview-geninterlock.jpg',
+    url: 'https://geninterlock.com',
+  },
+  {
+    title: 'On Demand Air',
+    category: 'WordPress Development',
+    description:
+      'Full WordPress build for a private aviation company — features a multi-step flight planning form with dynamic routing, passenger details, and trip configuration.',
+    tags: ['WordPress', 'PHP', 'JavaScript', 'Forms'],
+    color: '#5BAFD6',
+    image: '/preview-ondemandair.jpg',
+    url: 'https://www.ondemandair.co/',
+  },
+  {
+    title: 'Imperial Design',
+    category: 'HubSpot CMS',
+    description:
+      'Marketing site built within HubSpot CMS — custom modules, theme development, and CRM integration to support lead capture and client engagement workflows.',
+    tags: ['HubSpot', 'CSS', 'JavaScript', 'CMS'],
+    color: '#A87FE8',
+    image: '/preview-imperial.jpg',
+    url: 'https://imperial.design/',
   },
   {
     title: 'The Steves Database',
@@ -28,19 +62,21 @@ const PROJECTS = [
       'A catalog of actors named Steve and their roles across media. Built with Django, featuring comprehensive data import from Excel and a searchable interface.',
     tags: ['Django', 'Python', 'PostgreSQL', 'Data'],
     color: '#E06B75',
+    image: '/preview-steves.jpg',
+    url: null,
   },
-  {
-    title: 'Multi-Client Shopify Portfolio',
-    category: 'Shopify Development',
-    description:
-      '8+ years managing client portfolios — theme customizations, payment processing, domain configuration, and complex business logic across diverse storefronts.',
-    tags: ['Shopify', 'WordPress', 'CSS', 'Consulting'],
-    color: '#50C4A1',
-  },
+  
 ];
 
-export default function Projects() {
+export default function Projects({ hoveredLang }) {
   const [hovered, setHovered] = useState(null);
+
+  const tagMatches = (tag) => {
+    if (!hoveredLang) return false;
+    const t = tag.toLowerCase();
+    const l = hoveredLang.toLowerCase();
+    return t === l || l.includes(t) || t.includes(l);
+  };
 
   return (
     <section id="projects" className={styles.section}>
@@ -55,7 +91,7 @@ export default function Projects() {
         {PROJECTS.map((p, i) => (
           <FadeIn key={i} delay={i * 0.1}>
             <div
-              className={`${styles.card} ${hovered === i ? styles.cardHover : ''}`}
+              className={`${styles.cardWrapper} ${hovered === i ? styles.cardHover : ''}`}
               style={{
                 '--project-color': p.color,
                 '--project-color-faded': p.color + '44',
@@ -63,16 +99,45 @@ export default function Projects() {
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered(null)}
             >
-              <div className={styles.stripe} />
-              <span className={styles.category}>{p.category}</span>
-              <h3 className={styles.name}>{p.title}</h3>
-              <p className={styles.desc}>{p.description}</p>
-              <div className={styles.tags}>
-                {p.tags.map((t) => (
-                  <span key={t} className={styles.tag}>
-                    {t}
+              <div className={styles.card}>
+                <div className={styles.stripe} />
+
+                {p.image && p.url && (
+                  <div className={styles.imageSlide}>
+                    <img src={p.image} alt={p.title} className={styles.slideImg} />
+                  </div>
+                )}
+                <div className={styles.dimOverlay} />
+
+                <span className={styles.category}>{p.category}</span>
+                <h3 className={styles.name}>{p.title}</h3>
+                <p className={styles.desc}>{p.description}</p>
+                <div className={styles.tags}>
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className={`${styles.tag} ${tagMatches(t) ? styles.tagHighlighted : ''}`}
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {p.url ? (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.viewBtn}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    View Project
+                  </a>
+                ) : (
+                  <span className={`${styles.viewBtn} ${styles.viewBtnDev}`}>
+                    In Development
                   </span>
-                ))}
+                )}
               </div>
             </div>
           </FadeIn>

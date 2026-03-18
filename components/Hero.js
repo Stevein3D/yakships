@@ -22,7 +22,7 @@ export default function Hero() {
       <FadeIn>
         <div className={styles.badge}>
           <span className={styles.badgeDot} />
-          Available for freelance work
+          Available for new opportunities
         </div>
       </FadeIn>
 
@@ -36,9 +36,10 @@ export default function Hero() {
 
       <FadeIn delay={0.2}>
         <p className={styles.subtitle}>
-          Steve Sikoryak — Freelance Shopify Developer &amp; Full-Stack Builder.
-          10+ years transforming ideas into polished, high-performing storefronts
-          and web applications.
+          Steve Sikoryak — Shopify Developer &amp; Full-Stack Builder 
+          with 10+ years of experience crafting high-performing storefronts 
+          and web applications. Detail-oriented, collaborative, and known for 
+          shipping clean, thoughtful solutions.
         </p>
       </FadeIn>
 
@@ -57,9 +58,9 @@ export default function Hero() {
         <div className={styles.counters}>
           <Counter end={10} suffix="+" label="YEARS EXPERIENCE" />
           <div className={styles.counterDivider} />
-          <Counter end={50} suffix="+" label="PROJECTS COMPLETED" />
-          <div className={styles.counterDivider} />
           <Counter end={30} suffix="+" label="HAPPY CLIENTS" />
+          <div className={styles.counterDivider} />
+          <Counter end={50} suffix="+" label="PROJECTS COMPLETED" />
         </div>
       </FadeIn>
 

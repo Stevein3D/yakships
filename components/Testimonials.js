@@ -5,17 +5,17 @@ const TESTIMONIALS = [
   {
     name: "Lucy's Kitchen",
     role: 'Primary Client',
-    text: "Steve built our entire ordering system from scratch — cart validation, collection scheduling, everything. It just works.",
+    text: "Steve customized our entire ordering system from cart validation to collection scheduling. Everything just works. We saw over a 10% increase in revenue in the first month compared to last year after the site updates.",
   },
   {
     name: 'Board Game Group',
     role: 'Meep Meet Users',
-    text: "The game night planner made organizing sessions effortless. Love the BGG integration and Discord notifications.",
+    text: "The game night planner made organizing sessions a breeze. It's quick, stats update instantly, and I've discovered tons of new games through it. Love the BGG integration, stat tracking, and the fun profile details.",
   },
   {
-    name: 'Consulting Clients',
-    role: 'Various Projects',
-    text: 'Reliable, thorough, and always finds creative solutions to complex e-commerce problems. A true specialist.',
+    name: 'Former Colleagues',
+    role: 'Sussman Consultants',
+    text: 'Steve is a joy to work with. He\'s reliable, responsive, and genuinely fun to have on the team. He communicates clearly with clients, keeps everyone in the loop, and brings a positive energy that makes even tough projects feel manageable.',
   },
 ];
 

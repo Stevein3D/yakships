@@ -7,15 +7,15 @@ import styles from './FAQ.module.css';
 const FAQS = [
   {
     q: "What's your specialty?",
-    a: "Shopify development and custom e-commerce solutions. I specialize in complex business logic — cart validation, scheduled collections, payment integrations, and theme customization with Liquid.",
+    a: "Shopify development and custom e-commerce solutions. I focus on building robust, tailored setups that integrate seamlessly with how my clients actually run their business so they can manage their site day-to-day with confidence, not confusion.",
   },
   {
-    q: "What's your tech stack?",
-    a: "Shopify/Liquid for e-commerce, React/Next.js for web apps, Django/Python for backend projects, and PostgreSQL for databases. I pick the right tool for each project.",
+    q: "Are you a web designer?",
+    a: "I'm a developer first, but I have a strong eye for what looks good and what works. I'm very comfortable in the Adobe suite (especially Photoshop) and I approach every build with a mobile-first mindset, focusing on clean layouts, intuitive UX, and responsive design that works across all devices. You won't need to hand me pixel-perfect mockups to get a polished result.",
   },
   {
     q: 'How do you handle projects?',
-    a: "I work iteratively — starting with requirements, building in phases, and keeping communication tight. I'm a freelancer who operates like an embedded team member.",
+    a: "I work iteratively, starting with requirements, building in phases, and keeping communication tight throughout. I like to stay closely embedded with the team so nothing falls through the cracks. You'll always know where things stand and what's coming next.",
   },
   {
     q: 'Can you work with existing codebases?',

@@ -30,7 +30,7 @@ export default function Hero() {
         <h1 className={styles.title}>
           Crafting <span className={styles.titleAccent}>E-Commerce</span>
           <br />
-          Experiences That Convert
+          Experiences That Deliver
         </h1>
       </FadeIn>
 
